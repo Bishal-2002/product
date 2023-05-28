@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate') %>
+<div class="row my-5">
+    <h1 class="text-center">New Product</h1>
+    <div class="col-md-6 offset-md-3">
+        <form action="/products" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="product[name]" required placeholder="Galaxy S22 Ultra" autofocus>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill out the field!</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">INR</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="product[price]" required placeholder="1000">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please fill out the field!</div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Featured?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="product[isFeatured]" id="isFeatured1" value="true">
+                    <label class="form-check-label" for="isFeatured1">
+                      Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="product[isFeatured]" id="isFeatured2" value="false">
+                    <label class="form-check-label" for="isFeatured2">
+                      No
+                    </label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="rating" class="form-label">Rating</label>
+                <input type="range" class="form-range" min="0" max="5" step="1" id="rating" name="product[rating]">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="company">Company Name</label>
+                <input class="form-control" type="text" id="company" name="product[company]" required placeholder="Samsung" autofocus>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please fill out the field!</div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Product</button>
+                <a href="/products" class="btn btn-success">Home</a>
+            </div>
+        </form>
+    </div>
+</div>

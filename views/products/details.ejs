@@ -1,0 +1,15 @@
+<% layout('layouts/boilerplate') %>
+<div class="my-5">
+    <h1><%= product.name %></h1>
+    <ul>
+        <li>Price - <%= product.price %> Rs</li>
+        <li>Rating - <%= product.rating %></li>
+        <li>Created At - <%= product.date.toJSON().slice(0,10) %></li>
+        <li>Company - <%= product.company %></li>
+    </ul>
+    <a href="/products" class="btn btn-success btn-sm">Home</a>
+    <form action="/products/<%= product.id %>?_method=delete" method="post" class="d-inline">
+        <button class="btn btn-danger btn-sm">Delete</button>
+    </form>
+    <a href="/products/<%= product._id %>/edit" class="btn btn-secondary btn-sm">Edit</a>
+</div>

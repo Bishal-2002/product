@@ -1,0 +1,13 @@
+<% layout('layouts/boilerplate') %>
+<div class="my-5">
+    <h1>Filtered Products</h1>
+    <ul>
+        <% for(let product of products){ %>
+            <% if(product.price <= price || product.rating>=rating){ %>
+                <li><a href="/products/<%= product._id %>"><%= product.name %></a></li>
+            <% } %>
+        <% } %>
+    </ul>
+    <a href="/products" class="btn btn-success">Home</a>
+    <a href="/products/new" class="btn btn-success">Add Product</a>
+</div>
